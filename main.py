@@ -7,7 +7,7 @@ import os
 
 # init
 pygame.init()
-
+# comment
 dis_width = 370
 dis_height = 550
 
