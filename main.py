@@ -40,7 +40,7 @@ bird_down = pygame.image.load(os.path.join("Graphics", "bird_down.png"))
 bird_down = pygame.transform.scale(bird_down, (bird_width, bird_height))
 
 # bird_imgs list for bird fly animation
-bird_imgs = [bird_up, bird_mid, bird_down]
+bird_imgs = [bird_mid, bird_up, bird_mid, bird_down]
 
 # set display width/height/title
 dis = pygame.display.set_mode((dis_width, dis_height))
@@ -188,7 +188,7 @@ def gameLoop():
     NEWTUBE = pygame.USEREVENT+1
     pygame.time.set_timer(NEWTUBE, 1500)
     BIRDCHANGE = pygame.USEREVENT+2
-    pygame.time.set_timer(BIRDCHANGE, 150)
+    pygame.time.set_timer(BIRDCHANGE, 120)
     bird_change = 0
 
     while not game_over:
@@ -203,7 +203,7 @@ def gameLoop():
                     game_over = True
                     game_close = False
                 if event.type == BIRDCHANGE:
-                    if bird_change < 2:
+                    if bird_change < 3:
                         bird_change += 1
                     else:
                         bird_change = 0
@@ -224,7 +224,7 @@ def gameLoop():
             if event.type == pygame.QUIT:
                 game_over = True
             if event.type == BIRDCHANGE:
-                if bird_change < 2:
+                if bird_change < 3:
                     bird_change += 1
                 else:
                     bird_change = 0
